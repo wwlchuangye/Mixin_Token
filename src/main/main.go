@@ -21,6 +21,38 @@ import (
 	"bytes"
 )
 
+
+
+
+var ClientId = "a14100ad-9346-48cb-b3b3-a61dfb9857da"
+var ClientSecret = "82cc69fa9a1924f24e68ed749b81bfcc2db7cc6adea0b0aa6281123bc756b321"
+
+var PinCode = "161969";
+
+var SessionId = "51a6612e-47dd-46dd-96c2-97877588a955"
+
+var PinToken = "X6QzcO480NVZPNL1Kvzn/omfAPVDUZZrreAWJo5TJ2qR273dxZ0w4yjhRX4e0ABp+Wykyufd4cldzAo795AdKbmQXQ4lVL9wcuqsrGMvYVMXalPygqCqjlzHbBfGHkJ2NP2WMUHUUJ3Np/V00e50kGqa8Ze2yQrX+UhFVZ2S06k="
+
+var PrivateKey = `-----BEGIN RSA PRIVATE KEY-----
+MIICWwIBAAKBgQCKhzIeYSUdYhirtxQfBiIx6J8+cgZ6thpJV2Jf+gxJuZPpaVXY
+hmHKU46gbsVYzlYWJngjsN8XdqVuk6drSX4ZTDG+jFtPZ8ENH/46BmtdDefSr0r2
+mLwT4jPKg42F9euZG8EDBl2IAdoixQct4D/gczysX1uh/7fi5yK05v5CLwIDAQAB
+AoGATf85NOm1oAmvol9+sMkfT8KOhvZkt4r42fqdpTSA3rHimjV45GUlgmnxkFtO
+OmZTCj22v0HDGs7u7oesaDgFCxyW/MAYrmDlTSxdkFRIjNesio5bXAePu8xBMZD8
+ldM0ZwFyZdbT+8AOol7GJlMFMA4CgBi+7F0HG7CHs9jTl0ECQQDMfdLWqqt3EToq
+OZhQgHSoN//noOfAS7z0/VN4xwyUassFh7XgGwNyVSX8B9r7iV+TwrXXj1fdBqnS
+/CpqCzC5AkEArWve5TBxXhULT2JALpJKxZVjpWgbF0u2jjceTtxLXygZOQqL4p5p
+AQDSZmxgWCi7Sy/TisYtP1WrIvIlI5GGJwJASgfrQof7F1oHQq4jNFGs6hGL9aFN
+BVLmD5N+mqUFKt4WrePZtk5RSx0EaV+2qYWsMmQ1TNq6Jmx5Isbj3Aw9EQJATaK7
+70hniCHNpWUrrG2rcZa2PEdF0YEAodwFAnLWfyv5VrLk+rfF9EAE8PtVikH5zugD
+QN4FRZQ5f/R9MdYlAwJAe1HUiNboziXYftkwtoGfGbniROePHbifkg5aDBKUtWrF
+MqKiGhNuYq+4IRwlXSzFyL+ljvwYT2tBEjfIrd7qPQ==
+-----END RSA PRIVATE KEY-----`
+
+var homeurl = "http://diaoyudaren.qlgame.net:8080"
+
+
+
 func main() {
 
 	fmt.Println("start => ")
@@ -43,26 +75,13 @@ func signToken (){
 	//url: URL path without hostname, e.g.: /transfers
 	//body: HTTP Request body, e.g.: {"pin": "encrypted pin token"}
 
-	uid := "f969a140-4e28-4d81-84ba-a84339178136"
-	sid := "1ecf84f4-e017-4321-bfa6-acb1cf7f3348"
-	secret := `-----BEGIN RSA PRIVATE KEY-----
-MIICXQIBAAKBgQDCAzc13Gt1IDZcbnN1fdWkkYtKKSIblgydIs1tdQ1APLCBbDYM
-t/7hk6oT+uGy8u/aCJhfz68qmBpL1YRSAjhXZ9euLj0E1L5ExGwIUXXE3EPc4Du8
-iCUZ3BO12SVIyZjSxfg7t/HdSchWSta4LUT+OYM8KBReUqnxstzB+sbX8wIDAQAB
-AoGARt+v2pAz/SyQT0HWEdSvKBg3HxdZq2QsJXciPlslRRMmk5D5SbopdTRhTD05
-GAshTbAYIeAXqGK6MHvGg8Ll23xSPgqbkyMjF1s5kVO5axjETlNuzBOqPJihUs7r
-8aLPiGm0+k17SfKaFfmNxZMLjDQK19V6JX9igqC3Mdg1dekCQQD6rxlF6Lj6UfT4
-IIhSAqtD9CEnqopfPtUnTtMtqqdu5aPe64qm2FDcgwSNQL/mQAn/oSuWdO3uC7ua
-kcXF6RFvAkEAxiB2OyZ6zx5CMXY2Ympl2C0ZCom8zLZRgcvwJqocmplmbbDp+EOy
-ETQ/RxbXBjf/4AeZKvs6RTO4VSi6yxwXvQJBAN0gq7iBKvqUZPSjLdy5wf11UfG9
-e8W8lSXRYHL+ACfQpZa0S2AVnG6Hm/JF1YDzqF43+00C5AaBjwEv6TdE+j0CQEIw
-Og9MrZ5f13E6srRyIw/zEPiKRz6EcfpQrSvdjKzBLozam29K/kPtFm6jXLZBIwQu
-xaasQy03OA+LCcws2GkCQQDsDtEQqE3Zw9p3lVHfFDlVs8G6UzY9w5RiHxSEEhW/
-lUpnwey8w1r8iNc3ErsUAagDEqI4R6lD6i8Lq48ifPBe
------END RSA PRIVATE KEY-----`
+	uid := ClientId
+	sid := SessionId
+	secret := PrivateKey
 	method := "GET"
-	uri := "https://baidu.com"
-	body := "SPeshgiSPsPcwKnXCA4Du0R6jAl0adrg3FUIKo2kLwn/sHhE1cSJ76TFf0BNNaBmxGtnt3m4WBgHD8MzRJONnoNjF5rlxoeWskAGFXaioH3lZ9eQ2tcKZ0rJQNUSHejeHYdNcB1DAgKFR0kt6HYEexpG42g4hz1tvlyMj//tPdU="
+	uri := homeurl
+	body := `{"pin": "`+PinToken+`"}`
+
 
 	var AuthenticationToken, err = SignAuthenticationToken(uid,sid,secret,method,uri,body);
 	if(err != nil){
@@ -114,26 +133,11 @@ func ePin (){
 	//iterator: must be bigger than the previous, the first time must be greater than 0. After a new session created, it will be reset to 0.
 
 
-	pin := "804747"
-	sessionId := "1ecf84f4-e017-4321-bfa6-acb1cf7f3348"
-	pinToken := "SPeshgiSPsPcwKnXCA4Du0R6jAl0adrg3FUIKo2kLwn/sHhE1cSJ76TFf0BNNaBmxGtnt3m4WBgHD8MzRJONnoNjF5rlxoeWskAGFXaioH3lZ9eQ2tcKZ0rJQNUSHejeHYdNcB1DAgKFR0kt6HYEexpG42g4hz1tvlyMj//tPdU="
-	privateKey := `
------BEGIN RSA PRIVATE KEY-----
-MIICXQIBAAKBgQDCAzc13Gt1IDZcbnN1fdWkkYtKKSIblgydIs1tdQ1APLCBbDYM
-t/7hk6oT+uGy8u/aCJhfz68qmBpL1YRSAjhXZ9euLj0E1L5ExGwIUXXE3EPc4Du8
-iCUZ3BO12SVIyZjSxfg7t/HdSchWSta4LUT+OYM8KBReUqnxstzB+sbX8wIDAQAB
-AoGARt+v2pAz/SyQT0HWEdSvKBg3HxdZq2QsJXciPlslRRMmk5D5SbopdTRhTD05
-GAshTbAYIeAXqGK6MHvGg8Ll23xSPgqbkyMjF1s5kVO5axjETlNuzBOqPJihUs7r
-8aLPiGm0+k17SfKaFfmNxZMLjDQK19V6JX9igqC3Mdg1dekCQQD6rxlF6Lj6UfT4
-IIhSAqtD9CEnqopfPtUnTtMtqqdu5aPe64qm2FDcgwSNQL/mQAn/oSuWdO3uC7ua
-kcXF6RFvAkEAxiB2OyZ6zx5CMXY2Ympl2C0ZCom8zLZRgcvwJqocmplmbbDp+EOy
-ETQ/RxbXBjf/4AeZKvs6RTO4VSi6yxwXvQJBAN0gq7iBKvqUZPSjLdy5wf11UfG9
-e8W8lSXRYHL+ACfQpZa0S2AVnG6Hm/JF1YDzqF43+00C5AaBjwEv6TdE+j0CQEIw
-Og9MrZ5f13E6srRyIw/zEPiKRz6EcfpQrSvdjKzBLozam29K/kPtFm6jXLZBIwQu
-xaasQy03OA+LCcws2GkCQQDsDtEQqE3Zw9p3lVHfFDlVs8G6UzY9w5RiHxSEEhW/
-lUpnwey8w1r8iNc3ErsUAagDEqI4R6lD6i8Lq48ifPBe
------END RSA PRIVATE KEY-----`
-	var iterator uint64 = 100
+	pin := PinCode
+	sessionId := SessionId
+	pinToken := PinToken
+	privateKey := PrivateKey
+	var iterator uint64 = 101
 
 	var encPin = EncryptPIN(pin, pinToken, sessionId, privateKey, iterator)
 	fmt.Println("EncryptPIN : ", encPin)
